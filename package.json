@@ -4,7 +4,8 @@
   "description": "react todo list",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create": "webpack",
+    "start": "webpack-dev-server --open"
   },
   "presets": [
     "@babel/present-env",
@@ -33,8 +34,8 @@
     "css-loader": "^5.0.2",
     "html-webpack-plugin": "^5.1.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.21.2",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1"
   }
 }
