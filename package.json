@@ -1,11 +1,15 @@
 {
   "name": "react_todo_list",
   "version": "1.0.0",
-  "description": "",
+  "description": "react todo list",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "presets": [
+    "@babel/present-env",
+    "@babel/preset-react"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ewirtz3/react_todo_list.git"
