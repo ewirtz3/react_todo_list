@@ -1,22 +1,13 @@
 import React from "react";
-import { Grid, makeStyles, Paper } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
+import Header from "./components/Header";
+import ToDoList from "./components/ToDoList";
+import ToDoItem from "./components/ToDoItem";
 import "./styles.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-  },
-  header: {
-    fontFamily: ["Pacifico", "cursive"],
-    fontSize: "80px",
-    color: theme.palette.primary.main,
-    textAlign: "center",
-  },
-  span: {
-    color: theme.palette.warning.main,
   },
 }));
 
@@ -26,11 +17,9 @@ export default function App() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.header}>
-            emily's <span className={classes.span}>to do</span> list
-          </Paper>
-        </Grid>
+        <Header />
+        <ToDoList />
+        <ToDoItem />
       </Grid>
     </div>
   );
