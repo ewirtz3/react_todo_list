@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, makeStyles, Paper } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +21,11 @@ export default function Header() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid item xs={12}>
-        <Paper className={classes.header} elevation={3}>
+    <div container className={classes.root}>
+      <Grid item className={classes.header} xs={12}>
+        <p>
           emily's <span className={classes.span}>to do</span> list
-        </Paper>
+        </p>
       </Grid>
     </div>
   );

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ewirtz3/react_todo_list#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
