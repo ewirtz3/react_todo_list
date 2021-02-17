@@ -26,6 +26,7 @@ export default function App() {
         <Paper elevation={24} className={classes.paper}>
           <Header />
           <AddNewItem />
+          <ToDoList />
         </Paper>
       </Grid>
     </div>
