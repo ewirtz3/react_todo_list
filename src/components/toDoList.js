@@ -5,9 +5,13 @@ import ToDoItem from "./ToDoItem";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    padding: theme.spacing(5),
   },
   list: {
     padding: theme.spacing(2),
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
   },
 }));
 

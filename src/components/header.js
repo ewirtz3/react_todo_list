@@ -9,11 +9,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     fontFamily: ["Pacifico", "cursive"],
     fontSize: "80px",
-    color: theme.palette.primary.main,
+    color: theme.palette.info.light,
     textAlign: "center",
   },
   span: {
-    color: theme.palette.warning.main,
+    color: theme.palette.warning.light,
   },
 }));
 
