@@ -20,24 +20,29 @@ const useStyles = makeStyles((theme) => ({
 export default function AddNewItem() {
   const classes = useStyles();
 
+  const handleNewToDo = (event) => {
+    console.log(event.target.parentElement.parentElement[0].value);
+  };
+
   return (
-    <div container className={classes.root}>
+    <div className={classes.root}>
       <form className={classes.form} noValidate autoComplete="off">
         <TextField
-          id="outlined-primary"
+          id="new-todo"
           label="Add new to do"
           variant="outlined"
           color="primary"
         />
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<AddIcon />}
+          onClick={handleNewToDo}
+        >
+          Add To Do
+        </Button>
       </form>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        startIcon={<AddIcon />}
-      >
-        Add To Do
-      </Button>
     </div>
   );
 }

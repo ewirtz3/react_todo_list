@@ -17,13 +17,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ToDoItem({ text }) {
+export default function ToDoItem({
+  text,
+  handleComplete,
+  handleChange,
+  value,
+}) {
   const classes = useStyles();
 
   return (
-    <ListItem dense button>
+    <ListItem dense value={value} onClick={handleComplete} button>
       <ListItemIcon>
-        <CheckBox edge="start" disableRipple className={classes.checkbox} />
+        <CheckBox
+          edge="start"
+          onChange={handleChange}
+          className={classes.checkbox}
+        />
       </ListItemIcon>
       <ListItemText primary={text} className={classes.itemText} />
     </ListItem>

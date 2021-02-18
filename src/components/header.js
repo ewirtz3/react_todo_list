@@ -21,7 +21,7 @@ export default function Header() {
   const classes = useStyles();
 
   return (
-    <div container className={classes.root}>
+    <div className={classes.root}>
       <Grid item className={classes.header} xs={12}>
         <p>
           emily's <span className={classes.span}>to do</span> list

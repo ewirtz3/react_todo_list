@@ -32,14 +32,30 @@ const defaultToDos = [
 
 export default function ToDoList() {
   const classes = useStyles();
-  const [complete, setComplete] = useState();
+  const [tasks, setTasks] = useState([]);
+
+  const handleComplete = (event) => {
+    const check = event;
+    console.log("check", check);
+  };
+
+  function handleChange(event) {
+    const change = event;
+    console.log("change", change);
+  }
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         <List className={classes.list}>
           {defaultToDos.map((item, i) => (
-            <ToDoItem key={i} text={item.text} />
+            <ToDoItem
+              key={i}
+              value={i}
+              text={item.text}
+              handleComplete={handleComplete}
+              handleChange={handleChange}
+            />
           ))}
         </List>
       </Grid>
