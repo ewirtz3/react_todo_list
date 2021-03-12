@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, TextField, Paper, Button } from "@material-ui/core";
+import { makeStyles, TextField, Button } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AddNewItem({ handleSubmit }) {
   const classes = useStyles();
-
-  const handleNewToDo = (event) => {
-    console.log(event.target.parentElement.parentElement[0].value);
-  };
 
   return (
     <div className={classes.root}>
