@@ -52,6 +52,7 @@ export default function ToDoList() {
       complete: false,
     };
     setTasks([...tasks, newTask]);
+    event.target.parentElement.parentElement[0].value = "";
   };
 
   return (
