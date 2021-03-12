@@ -4,8 +4,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Checkbox,
 } from "@material-ui/core";
-import { CheckBox } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -28,7 +28,7 @@ export default function ToDoItem({
   return (
     <ListItem dense value={value} onClick={handleComplete} button>
       <ListItemIcon>
-        <CheckBox
+        <Checkbox
           edge="start"
           onChange={handleChange}
           className={classes.checkbox}

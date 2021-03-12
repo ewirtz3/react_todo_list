@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Paper, makeStyles } from "@material-ui/core";
 import Header from "./components/Header";
 import ToDoList from "./components/ToDoList";
-import AddNewItem from "./components/AddNewItem";
 import "./styles.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +24,6 @@ export default function App() {
       <Grid container justify="center" xs={12} spacing={3}>
         <Paper elevation={24} className={classes.paper}>
           <Header />
-          <AddNewItem />
           <ToDoList />
         </Paper>
       </Grid>

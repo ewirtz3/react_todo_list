@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, makeStyles, List } from "@material-ui/core";
 import ToDoItem from "./ToDoItem";
+import AddNewItem from "./AddNewItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,16 +40,26 @@ export default function ToDoList() {
     console.log("check", check);
   };
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const change = event;
     console.log("change", change);
-  }
+  };
+
+  const handleSubmit = (event) => {
+    const newTaskText = event.target.parentElement.parentElement[0].value;
+    const newTask = {
+      text: newTaskText,
+      complete: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
+        <AddNewItem handleSubmit={handleSubmit} />
         <List className={classes.list}>
-          {defaultToDos.map((item, i) => (
+          {tasks.map((item, i) => (
             <ToDoItem
               key={i}
               value={i}
