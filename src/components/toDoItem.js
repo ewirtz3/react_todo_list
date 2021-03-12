@@ -17,20 +17,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ToDoItem({
-  text,
-  handleComplete,
-  handleChange,
-  value,
-}) {
+export default function ToDoItem({ text, handleComplete, value }) {
   const classes = useStyles();
 
   return (
-    <ListItem dense value={value} onClick={handleComplete} button>
+    <ListItem dense value={value} button>
       <ListItemIcon>
         <Checkbox
           edge="start"
-          onChange={handleChange}
+          onChange={handleComplete}
           className={classes.checkbox}
         />
       </ListItemIcon>

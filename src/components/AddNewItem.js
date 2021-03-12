@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AddNewItem({ handleSubmit }) {
+export default function AddNewItem({ handleSubmitKey, handleSubmitBtn }) {
   const classes = useStyles();
 
   return (
@@ -26,7 +26,7 @@ export default function AddNewItem({ handleSubmit }) {
         className={classes.form}
         noValidate
         autoComplete="off"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmitKey}
       >
         <TextField
           id="new-todo"
@@ -39,7 +39,7 @@ export default function AddNewItem({ handleSubmit }) {
           color="primary"
           className={classes.button}
           startIcon={<AddIcon />}
-          onClick={handleSubmit}
+          onClick={handleSubmitBtn}
         >
           Add To Do
         </Button>

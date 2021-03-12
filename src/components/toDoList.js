@@ -16,39 +16,44 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const defaultToDos = [
-  {
-    text: "laundry",
-    complete: false,
-  },
-  {
-    text: "grocery store",
-    complete: false,
-  },
-  {
-    text: "finish React project",
-    complete: false,
-  },
-];
-
 export default function ToDoList() {
   const classes = useStyles();
   const [tasks, setTasks] = useState([]);
 
+  useEffect(() => {
+    if (!tasks) {
+      return;
+    }
+  }, [tasks]);
+
   const handleComplete = (event) => {
-    const check = event;
-    console.log("check", check);
+    const completedText =
+      event.target.parentElement.parentElement.parentElement.nextSibling
+        .children[0].innerText;
+    let completedTask = tasks.find((element) => element.text == completedText);
+    completedTask.complete = true;
+    const uncheckedTasks = tasks.filter((task) => task.complete === false);
+    setTasks([...uncheckedTasks]);
   };
 
-  const handleChange = (event) => {
-    const change = event;
-    console.log("change", change);
-  };
-
-  const handleSubmit = (event) => {
-    const newTaskText = event.target.parentElement.parentElement[0].value;
-    const newTask = {
+  const handleSubmitKey = (event) => {
+    event.preventDefault();
+    console.log(event);
+    const newTaskText = event.target[0].value;
+    let newTask = {
       text: newTaskText,
+      id: Math.floor(Math.random() * 10000),
+      complete: false,
+    };
+    setTasks([...tasks, newTask]);
+    event.target[0].value = "";
+  };
+
+  const handleSubmitBtn = (event) => {
+    const newTaskText = event.target.parentElement.parentElement[0].value;
+    let newTask = {
+      text: newTaskText,
+      id: Math.floor(Math.random() * 10000),
       complete: false,
     };
     setTasks([...tasks, newTask]);
@@ -58,15 +63,17 @@ export default function ToDoList() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <AddNewItem handleSubmit={handleSubmit} />
+        <AddNewItem
+          handleSubmitKey={handleSubmitKey}
+          handleSubmitBtn={handleSubmitBtn}
+        />
         <List className={classes.list}>
-          {tasks.map((item, i) => (
+          {tasks.map((item) => (
             <ToDoItem
-              key={i}
-              value={i}
+              key={item.id}
+              value={item.text}
               text={item.text}
               handleComplete={handleComplete}
-              handleChange={handleChange}
             />
           ))}
         </List>
