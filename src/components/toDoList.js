@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     flexGrow: 1,
     padding: theme.spacing(5),
-    border: "3px solid red",
   },
   list: {
     alignSelf: "center",
@@ -19,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
-    border: "3px solid purple",
   },
 }));
 
@@ -67,9 +65,20 @@ export default function ToDoList() {
     event.target.parentElement.parentElement[0].value = "";
   };
 
+  const useDefaultBtn = (event) => {
+    console.log(event.target.innerHTML);
+    const defaultTaskText = event.target.innerHTML;
+    let newTask = {
+      text: defaultTaskText,
+      id: Math.floor(Math.random() * 10000),
+      complete: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <Grid container spacing={3} className={classes.root}>
-      <FrequentToDos />
+      <FrequentToDos useDefaultBtn={useDefaultBtn} />
       <AddNewItem
         handleSubmitBtn={handleSubmitBtn}
         handleSubmitKey={handleSubmitKey}

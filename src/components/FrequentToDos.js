@@ -8,8 +8,6 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
-    border: "3px solid #333333",
-    borderRadius: "2% 6% 5% 4% / 1% 1% 2% 4%",
   },
   header: {
     fontFamily: ["Pacifico", "cursive"],
@@ -18,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FrequentToDos({ todos }) {
+export default function FrequentToDos({ todos, useDefaultBtn }) {
   const classes = useStyles();
   const defaultTodos = [
     { value: "laundry", label: "laundry" },
@@ -33,7 +31,12 @@ export default function FrequentToDos({ todos }) {
       </Typography>
       {defaultTodos.map((task, i) => {
         return (
-          <Button key={i} variant="outlined" color="secondary">
+          <Button
+            key={i}
+            variant="outlined"
+            color="secondary"
+            onClick={useDefaultBtn}
+          >
             {task.label}
           </Button>
         );
