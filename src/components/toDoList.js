@@ -7,14 +7,14 @@ import FrequentToDos from "./FrequentToDos";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "grid",
+    display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
     flexGrow: 1,
     padding: theme.spacing(5),
     border: "3px solid red",
   },
   list: {
+    alignSelf: "center",
     padding: theme.spacing(2),
     width: "100%",
     maxWidth: 360,
