@@ -3,17 +3,23 @@ import { Grid, List } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ToDoItem from "./ToDoItem";
 import AddNewItem from "./AddNewItem";
+import FrequentToDos from "./FrequentToDos";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: "grid",
+    flexDirection: "column",
+    justifyContent: "center",
     flexGrow: 1,
     padding: theme.spacing(5),
+    border: "3px solid red",
   },
   list: {
     padding: theme.spacing(2),
     width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+    border: "3px solid purple",
   },
 }));
 
@@ -62,23 +68,22 @@ export default function ToDoList() {
   };
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <AddNewItem
-          handleSubmitBtn={handleSubmitBtn}
-          handleSubmitKey={handleSubmitKey}
-        />
-        <List className={classes.list}>
-          {tasks.map((item) => (
-            <ToDoItem
-              key={item.id}
-              value={item.text}
-              text={item.text}
-              handleComplete={handleComplete}
-            />
-          ))}
-        </List>
-      </Grid>
-    </div>
+    <Grid container spacing={3} className={classes.root}>
+      <FrequentToDos />
+      <AddNewItem
+        handleSubmitBtn={handleSubmitBtn}
+        handleSubmitKey={handleSubmitKey}
+      />
+      <List className={classes.list}>
+        {tasks.map((item) => (
+          <ToDoItem
+            key={item.id}
+            value={item.text}
+            text={item.text}
+            handleComplete={handleComplete}
+          />
+        ))}
+      </List>
+    </Grid>
   );
 }
