@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Grid, makeStyles, List } from "@material-ui/core";
+import { Grid, List } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import ToDoItem from "./ToDoItem";
 import AddNewItem from "./AddNewItem";
 
@@ -63,10 +64,7 @@ export default function ToDoList() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <AddNewItem
-          handleSubmitKey={handleSubmitKey}
-          handleSubmitBtn={handleSubmitBtn}
-        />
+        <AddNewItem handleSubmitBtn={handleSubmitBtn} />
         <List className={classes.list}>
           {tasks.map((item) => (
             <ToDoItem

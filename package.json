@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/ewirtz3/react_todo_list/issues"
   },
-  "homepage": "http://ewirtz3.github.io/react_todo_list",
+  "homepage": "https://ewirtz3.github.io/react_todo_list",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
