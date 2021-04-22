@@ -64,7 +64,10 @@ export default function ToDoList() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <AddNewItem handleSubmitBtn={handleSubmitBtn} />
+        <AddNewItem
+          handleSubmitBtn={handleSubmitBtn}
+          handleSubmitKey={handleSubmitKey}
+        />
         <List className={classes.list}>
           {tasks.map((item) => (
             <ToDoItem
