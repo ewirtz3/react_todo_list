@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(2),
       width: "60ch",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
     },
     button: {
       margin: theme.spacing(1),
